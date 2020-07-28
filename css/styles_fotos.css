@@ -1,0 +1,33 @@
+.imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hexagon {
+  width: 350px;
+  height: 300px;
+  background-color: red;
+  transform: rotate(120deg);
+  overflow: hidden;
+  visibility: hidden;
+  border: 1px red solid;
+  margin: 6px;
+}
+
+.hexagonInside {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  transform: rotate(-60deg);
+  overflow: hidden;
+}
+
+.hexagonImage {
+  width: 100%;
+  height: 100%;
+  background-image: url("../resources/vinicius.jpg");
+  background-size: 60% 100%;
+  transform: rotate(-60deg);
+  background-position: center;
+  visibility: visible;
+}

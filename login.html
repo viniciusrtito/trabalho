@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles_global.css">  
+  <link rel="stylesheet" href="css/styles_login.css">  
+  <script src="js/login.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous">
+</script>
+
+
+  <title>VHF Music</title>
+
+</head>
+<body >
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+        <a class="navbar-brand" href="#">
+            <img src="resources/logo.png" width="30" height="30" class="d-inline-block align-top mr-2"
+                alt="logo VFH">
+            VHF Music
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end mr-3" id="navbarNavDropdown">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sobre.html">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contato.html">Contato</a>
+                  </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Multimidias
+                    </a>
+                    <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="artistas.html">Imagens</a>
+                        <a class="dropdown-item" href="multimidia.html">Videos</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </header>
+  
+    <div class="d-block d-sm-block d-md-none d-lg-none containerMobile">
+        <div id="contentMobile" class="contentMobile moveContentMobileBottom">
+            <form  class="formLogin">
+                <h2>Login</h2>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputLoginEmail"  placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="inputLoginPassword" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary" >Login</button>
+                <a href="#" class="text-center">Esqueci minha senha</a>
+            </form>
+            
+            <form class="formRegister">
+                <h2>Registre-se</h2>
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputRegisterName" placeholder="Nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputRegisterEmail"  placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="inputRegisterPassword" placeholder="Senha" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="inputRegisterPasswordConfirm" placeholder="Confirmar senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary" >Cadastrar</button>
+            </form>
+        </div>
+
+        <button  id="buttonMobile" class="moveContentMobileButtonBottom" onclick="moveContentMobile()">Não tenho cadastro ▲</button>
+    </div>
+
+    <div class="d-none d-sm-none d-md-flex d-lg-flex container justify-content-center align-items-center">
+        <div class="containerLoginRegister">
+          
+            <div class="info">
+                <p>JÁ TEM CADASTRO?</p> 
+                <button  class="btnLogin btn btn-outline-secondary" onclick="moveFormsContainer()">
+                    Realizar login
+                </button>
+            </div>
+
+
+            <div class="info">
+                <p>AINDA NÃO TEM CADASTRO?</p> 
+                <button  class="btnRegister btn btn-outline-secondary" onclick="moveFormsContainer()">
+                    Realizar cadastro
+                </button>
+            </div>
+          
+            <div id="formsContainer" class="formsContainer formsContainerMoveLeft">
+                <form id="formLogin" class="formLogin">
+                    <h2>Login</h2>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="inputLoginEmail"  placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="inputLoginPassword" placeholder="Senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Login</button>
+                    <a href="#" class="text-center">Esqueci minha senha</a>
+                </form>
+
+                <form id="formRegister" class="formRegister formHide">
+                    <h2>Registre-se</h2>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="inputRegisterName" placeholder="Nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="inputRegisterEmail"  placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="inputRegisterPassword" placeholder="Senha" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="inputRegisterPasswordConfirm" placeholder="Confirmar senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Cadastrar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="bg-transparente text-white modal-footer justify-content-center">
+            <div class="row">
+                
+                <div class="col-sm-2 ml-5">
+                    <h5 class="text-dark" >Nossa Empresa</h5>
+                    <ul class="nav-link" >
+                        <li>
+                            <a class="nav-item text-dark" href="sobre.html">Quem Somos</a>
+                        </li>
+                        <li>
+                            <a class="nav-item text-dark" href="sobre.html">O Que fazemos</a>
+                        </li>
+                        <li>
+                            <a class="nav-item text-dark" href="sobre.html">Como nos encontrar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-2 ml-5 justify-content-center">
+                    <h5 class="text-dark" >Parceiros</h5>
+                    <ul class="nav-link" >
+                        <li>
+                            <a class="nav-item text-dark" href="https://www.linkedin.com/in/viniciustito/">Vinicius Tito</a>
+                        </li>
+                        <li>
+                            <a class="nav-item text-dark" href="https://www.linkedin.com/mwlite/in/hillary-endo-4667871a0">Hillary Endo</a>
+                        </li>
+                        <li>
+                            <a class="nav-item text-dark" href="https://www.linkedin.com/in/fabio-francisco-902b831b2/">Fábio Silva</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 ml-5">
+                    <h5 class="text-dark">Siga-nos</h5>
+                    <hr class="bg-dark mr-5">
+                    <img class="mr-4 ml-2"  src="resources/images/logo/faceLogo.png" alt="logo Facebook" width="50" height="50">
+                    <img class="mr-2"src="resources/images/logo/instaLogo.png" alt="logo Facebook" width="50" height="50">
+                    <img class=" ml-4 mr-1 justify-content-end" src="resources/images/logo/twitterLogo.png" alt="logo Facebook" width="50" height="50">
+                    <hr class="bg-dark mr-5">
+                    <a class="text-secondary" href="#"><h6>contato@VHFmusic.com.br</h6></a>
+                </div>
+                <div class="col-sm-3 ml-5 justify-content-center text-primary">
+                    <h5 class="text-dark" >Serviços</h5>
+                    <ul class="nav-link" >
+                        <li>
+                            <a class="nav-item text-dark" href="artistas.html">Promoção de Eventos e show</a>
+                        </li>
+                        <li>
+                            <a class="nav-item text-dark" href="index.html">Músicas e Videos online</a>
+                        </li>
+                        <li>
+                            <a class="nav-item text-dark" href="multimidia.html">Band news</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 justify-content-center text-white">
+                    <h5>isso e um modo do footer funcionar</h5>
+                </div>
+                <div class="col-sm-6 ">
+                    <h5 class="justify-content-center text-white">isso é um modo do footer funcionar</h5>
+                </div>
+               
+            </div>
+        </div>
+        <div class=" text-center text-muted" >
+            <p>© Copyright 2001-2020 VHFMusic.com.br - All Rights Reserved - Legal</p>
+        </div>
+    </footer>
+
+
+
+    </body>
+</html>
